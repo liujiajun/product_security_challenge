@@ -4,7 +4,7 @@ from flask_wtf.csrf import CsrfProtect
 from tinydb import TinyDB
 
 from auth import auth as auth_blueprint
-from config import SECRET_KEY, DATABASE_PATH, ENABLE_HTTPS, HTTPS_CERT_PATH, HTTPS_KEY_PATH
+from config import SECRET_KEY, DATABASE_PATH
 from main import main as main_blueprint
 from user import User
 
@@ -28,9 +28,3 @@ app.register_blueprint(auth_blueprint)
 app.register_blueprint(main_blueprint)
 
 db = TinyDB(DATABASE_PATH)
-
-if __name__ == '__main__':
-    if not ENABLE_HTTPS:
-        app.run(ssl_context = (HTTPS_KEY_PATH, HTTPS_CERT_PATH))
-    else:
-        app.run()
