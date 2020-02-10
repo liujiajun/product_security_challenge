@@ -1,5 +1,6 @@
-from tinydb import Query
 from flask_login import UserMixin
+from tinydb import Query
+
 import app
 import utils
 
@@ -11,7 +12,6 @@ class User(UserMixin):
 
     def get_id(self):
         return self.name
-
 
     @staticmethod
     def add_user(name, password):

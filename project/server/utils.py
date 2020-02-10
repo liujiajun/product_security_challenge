@@ -1,7 +1,11 @@
 import re
+
 import bcrypt
+
 import config
+
 salt = config.SALT
+
 
 def hash_password(password):
     return bcrypt.hashpw(password.encode('utf-8'), salt).decode('utf-8')
