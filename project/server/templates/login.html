@@ -15,6 +15,7 @@
 <body>
 <div class="login-form">
     <form action="" method="post">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
         <h2 class="text-center">Log in</h2>
         {% with messages = get_flashed_messages() %}
             {% if messages %}
@@ -61,7 +62,7 @@
     <script>
         const usernameInput = document.getElementById('username');
         usernameInput.oninvalid = function (event) {
-            event.target.setCustomValidity('Username should only contain a-z, A-Z, 0-9.');
+            event.target.setCustomValidity('Username should only contain a-z, 0-9.');
         }
         usernameInput.oninput = function (event) {
             event.target.setCustomValidity('');

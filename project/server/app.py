@@ -1,15 +1,18 @@
 from flask import Flask
 from tinydb import TinyDB
 from flask_login import LoginManager
+from flask_wtf.csrf import CsrfProtect
 from auth import auth as auth_blueprint
 from main import main as main_blueprint
 from user import User
+
 app = Flask(__name__)
+
+CsrfProtect(app)
 
 login_manager = LoginManager()
 login_manager.init_app(app)
 login_manager.login_view = 'auth.login'
-
 
 @login_manager.user_loader
 def load_user(name):
