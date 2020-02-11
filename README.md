@@ -25,7 +25,7 @@ To build from source, you need to have **Python 3** installed on your computer. 
   The server will be started on http://localhost:5000
 - Alternatively, start the server in HTTPS mode:
   ```
-  python -m flask run --cert cert.pem --key key.pem
+  python -m flask run --cert cert/cert.pem --key cert/key.pem
   ```
   The server will be started on https://localhost:5000
 
