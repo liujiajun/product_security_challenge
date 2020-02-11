@@ -3,7 +3,8 @@
 This authentication demo app is built for the **Zendesk Product Security Challenge**. It supports login, logout, and creating users. It is built on Flask and uses a simple json file to store data.
 
 ## Setup
-To get started, you need to have **Python 3** installed on your computer. Although not required, it is recommended to use **Virtualenv** for isolated Python environment. 
+### Build from source
+To build from source, you need to have **Python 3** installed on your computer. Although not required, it is recommended to use **Virtualenv** for isolated Python environment. 
 - Clone this repository
 - Initialize virtual environment and install dependencies:
   
@@ -13,7 +14,7 @@ To get started, you need to have **Python 3** installed on your computer. Althou
   cd app
   pip install -r requirements.txt
   ```
-- Use sample database:
+- (Optional) Use sample database:
   ```
   cp db_dev.json db.json
   ```
@@ -28,6 +29,17 @@ To get started, you need to have **Python 3** installed on your computer. Althou
   ```
   The server will be started on https://localhost:5000
 
+### Use binary
+To use the pre-built binary, follow steps as follows:
+- Clone this repository
+- (Optional) Use sample database:
+  ```
+  cp db_dev.json dist/db.json
+  ```
+- Start the server in HTTPS mode: `./dist/app`
+  The server will be started on https://localhost:5000
+  
+### Sample database
 If you are using the sample database, you can login in with the following credentials:
 
 User name | Password
