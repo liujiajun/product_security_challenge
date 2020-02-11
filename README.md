@@ -32,10 +32,7 @@ To build from source, you need to have **Python 3** installed on your computer. 
 ### Use binary
 To use the pre-built binary, follow steps as follows:
 - Clone this repository
-- (Optional) Use sample database:
-  ```
-  cp db_dev.json dist/db.json
-  ```
+- (Optional) Use sample database: `cp db_dev.json dist/db.json`
 - Start the server in HTTPS mode: `./dist/app`
   The server will be started on https://localhost:5000
   
