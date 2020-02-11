@@ -1,32 +1,61 @@
 # Zendesk Product Security
 ### The Zendesk Product Security Challenge
+This authentication demo app is built for the **Zendesk Product Security Challenge**. It supports login, logout, and creating users. It is built on Flask and uses a simple json file to store data.
 
-Hello friend,
+# Setup
+To get started, you need to have **Python 3** installed on your computer. Although not required, it is recommended to use **Virtualenv** for isolated Python environment. 
+- Clone this repository
+- Initialize virtual environment and install dependencies:
+  
+  ```
+  python3 -m venv app
+  source app/bin/activate
+  cd app
+  pip install -r requirements.txt
+  ```
+- Use sample database:
+  ```
+  cp db_dev.json db.json
+  ```
+- Start the server in HTTP mode:
+  ```
+  python -m flask run 
+  ```
+  The server will be started on http://localhost:5000
+- Alternatively, start the server in HTTPS mode:
+  ```
+  python -m flask run --cert cert.pem --key key.pem
+  ```
+  The server will be started on https://localhost:5000
 
-We are super excited that you want to be part of the Product Security team at Zendesk.
+If you are using the sample database, you can login in with the following credentials:
+User name | Password
+------------ | -------------
+alice | 1234Abcd!
+bob | 1234Abcd!
+# Quick checklist
+- [x] Input sanitization and validation
+- [x] Password hashed
+- [x] Prevention of timing attacks
+- [ ] Logging
+- [x] CSRF prevention
+- [ ] Multi factor authentication
+- [ ] Password reset / forget password mechanism
+- [ ] Account lockout
+- [x] Cookie
+- [x] HTTPS
+- [ ] Known password check
 
-**To get started, you need to fork this repository to your own Github profile and work off that copy.**
-
-In this repository, there are the following files:
-1. README.md - this file
-2. project/ - the folder containing all the files that you require to get started
-3. project/index.html - the main HTML file containing the login form
-4. project/assets/ - the folder containing supporting assets such as images, JavaScript files, Cascading Style Sheets, etc. You shouldn’t need to make any changes to these but you are free to do so if you feel it might help your submission
-
-As part of the challenge, you need to implement an authentication mechanism with as many of the following features as possible. It is a non exhaustive list, so feel free to add or remove any of it as deemed necessary.
-
-1. Input sanitization and validation
-2. Password hashed
-3. Prevention of timing attacks
-4. Logging
-5. CSRF prevention
-6. Multi factor authentication
-7. Password reset / forget password mechanism
-8. Account lockout
-9. Cookie
-10. HTTPS
-11. Known password check
-
-You will have to create a simple binary (platform of your choice) to provide any server side functionality you may require. Please document steps to run the application. Your submission should be a link to your Github repository which you've already forked earlier together with the source code and binaries.
-
-Thank you!
+# Features
+## Basic features
+The app supports login, logout, and creating users. It also supports the Remember me option.
+## Input sanitization and validation
+User input is validated on both server side and client side
+## Password hashed
+All passwords are stored after then having been salted and hashed.
+## CSRF prevention
+All forms in the app are CSRF protected.
+## Cookie
+Cookies are used for the Remember Me feature.
+## HTTPS
+A self-signed certificate is added to support HTTPS.
