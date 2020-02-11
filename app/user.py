@@ -1,7 +1,6 @@
 from flask_login import UserMixin
 from tinydb import Query
 
-import app
 import utils
 
 
@@ -16,6 +15,7 @@ class User(UserMixin):
     @staticmethod
     def add_user(name, password):
         User = Query()
+        import app
         res = app.db.search(User.username == name)
 
         if res:
@@ -27,6 +27,7 @@ class User(UserMixin):
     @staticmethod
     def verify_user(name, hashed_password):
         query = Query()
+        import app
         res = app.db.search(query.username == name)
         if not res or not utils.verify_password(hashed_password, res[0]['password']):
             return False
@@ -35,6 +36,7 @@ class User(UserMixin):
     @staticmethod
     def get_user(name):
         query = Query()
+        import app
         res = app.db.search(query.username == name)
         if not res:
             return None
