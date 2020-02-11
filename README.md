@@ -2,7 +2,7 @@
 ### The Zendesk Product Security Challenge
 This authentication demo app is built for the **Zendesk Product Security Challenge**. It supports login, logout, and creating users. It is built on Flask and uses a simple json file to store data.
 
-# Setup
+## Setup
 To get started, you need to have **Python 3** installed on your computer. Although not required, it is recommended to use **Virtualenv** for isolated Python environment. 
 - Clone this repository
 - Initialize virtual environment and install dependencies:
@@ -29,11 +29,13 @@ To get started, you need to have **Python 3** installed on your computer. Althou
   The server will be started on https://localhost:5000
 
 If you are using the sample database, you can login in with the following credentials:
+
 User name | Password
------------- | -------------
-alice | 1234Abcd!
-bob | 1234Abcd!
-# Quick checklist
+| ------------ | ------------- |
+alice | 1234Abcd! |
+bob | 1234Abcd! |
+
+## Quick checklist
 - [x] Input sanitization and validation
 - [x] Password hashed
 - [x] Prevention of timing attacks
@@ -46,16 +48,16 @@ bob | 1234Abcd!
 - [x] HTTPS
 - [ ] Known password check
 
-# Features
-## Basic features
+## Features
+### Basic features
 The app supports login, logout, and creating users. It also supports the Remember me option.
-## Input sanitization and validation
+### Input sanitization and validation
 User input is validated on both server side and client side
-## Password hashed
+### Password hashed
 All passwords are stored after then having been salted and hashed.
-## CSRF prevention
+### CSRF prevention
 All forms in the app are CSRF protected.
-## Cookie
+### Cookie
 Cookies are used for the Remember Me feature.
-## HTTPS
+### HTTPS
 A self-signed certificate is added to support HTTPS.
