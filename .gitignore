@@ -1,0 +1,3 @@
+app/bin
+app/__pycache__
+app/lib/python3.7/site-packages
